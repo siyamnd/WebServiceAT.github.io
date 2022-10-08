@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="web_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MATERIAL">
+    <Key>
+      <PropertyRef Name="ID_MATERIAL" />
+    </Key>
+    <Property Name="ID_MATERIAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MATERIAL_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRICE" Type="decimal" Precision="6" Scale="3" />
+  </EntityType>
+  <EntityType Name="USER_TABLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="numer_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="Business" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="web_testModelStoreContainer">
+    <EntitySet Name="MATERIAL" EntityType="Self.MATERIAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_TABLE" EntityType="Self.USER_TABLE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

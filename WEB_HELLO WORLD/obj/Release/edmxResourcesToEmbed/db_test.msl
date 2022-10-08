@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="web_testModelStoreContainer" CdmEntityContainer="web_testEntities">
+    <EntitySetMapping Name="MATERIAL">
+      <EntityTypeMapping TypeName="web_testModel.MATERIAL">
+        <MappingFragment StoreEntitySet="MATERIAL">
+          <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+          <ScalarProperty Name="MATERIAL_NAME" ColumnName="MATERIAL_NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_TABLE">
+      <EntityTypeMapping TypeName="web_testModel.USER_TABLE">
+        <MappingFragment StoreEntitySet="USER_TABLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name_user" ColumnName="name_user" />
+          <ScalarProperty Name="numer_user" ColumnName="numer_user" />
+          <ScalarProperty Name="Business" ColumnName="Business" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
