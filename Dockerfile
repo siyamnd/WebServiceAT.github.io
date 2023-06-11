@@ -6,7 +6,7 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 
-RUN dotnet restore -p:RestoreUseSkipNonexistentTargets=false -nowarn:msb3202,nu1503
+RUN dotnet restore
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build -c Release -o /app/build
