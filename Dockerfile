@@ -7,14 +7,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["SIKO_API.exe", "."]
-RUN dotnet restore "./SIKO_API.exe"
+COPY ["SIKO_API.runtimeconfig.json", "."]
+RUN dotnet restore "./SIKO_API.runtimeconfig.json"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "SIKO_API.exe" -c Release -o /app/build
+RUN dotnet build "SIKO_API.runtimeconfig.json" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SIKO_API.exe" -c Release -o /app/publish
+RUN dotnet publish "SIKO_API.runtimeconfig.json" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
